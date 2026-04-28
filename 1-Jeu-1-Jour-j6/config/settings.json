@@ -1,0 +1,54 @@
+{
+    "projects": {
+        "05E20F1E-5327-4303-6DF4-324137EB096B": {
+            "config-debug": {
+              "additionalDependencies": [ "sfml-graphics-d.lib", "sfml-window-d.lib", "sfml-audio-d.lib", "sfml-system-d.lib", "opengl32.lib", "glu32.lib", "gdi32.lib", "winmm.lib", "dwmapi.lib", "freetype.lib" ],
+              "additionalIncludeDirectories": [ "$(SolutionDir)..\\lib\\SFML\\include", "$(SolutionDir)..\\include" ],
+              "additionalLibraryDirectories": [ "$(SolutionDir)..\\lib\\SFML\\lib" ],
+                "preprocessorDefinitions": []
+            },
+            "config-release": {
+              "additionalDependencies": [ "sfml-graphics-d.lib", "sfml-window-d.lib", "sfml-audio-d.lib", "sfml-system-d.lib", "opengl32.lib", "glu32.lib", "gdi32.lib", "winmm.lib", "dwmapi.lib", "freetype.lib" ],
+              "additionalIncludeDirectories": [ "$(SolutionDir)..\\lib\\SFML\\include", "$(SolutionDir)..\\include" ],
+              "additionalLibraryDirectories": [ "$(SolutionDir)..\\lib\\SFML\\lib" ],
+                "preprocessorDefinitions": []
+            },
+            "dependencies": [],
+            "dependents": [],
+            "name": "Engine",
+            "property-lib": true,
+            "property-pch": false,
+            "property-vcpkg": false,
+            "property-window": false
+        },
+        "318875B8-4C3F-5451-7A57-6A0160812C74": {
+            "config-debug": {
+              "additionalDependencies": [ "sfml-graphics-d.lib", "sfml-window-d.lib", "sfml-audio-d.lib", "sfml-system-d.lib", "opengl32.lib", "glu32.lib", "gdi32.lib", "winmm.lib", "dwmapi.lib", "freetype.lib" ],
+              "additionalIncludeDirectories": [ "$(SolutionDir)..\\lib\\SFML\\include", "$(SolutionDir)..\\include" ],
+              "additionalLibraryDirectories": [ "$(SolutionDir)..\\lib\\SFML\\lib" ],
+                "preprocessorDefinitions": []
+            },
+            "config-release": {
+              "additionalDependencies": [ "sfml-graphics-d.lib", "sfml-window-d.lib", "sfml-audio-d.lib", "sfml-system-d.lib", "opengl32.lib", "glu32.lib", "gdi32.lib", "winmm.lib", "dwmapi.lib", "freetype.lib" ],
+              "additionalIncludeDirectories": [ "$(SolutionDir)..\\lib\\SFML\\include", "$(SolutionDir)..\\include" ],
+              "additionalLibraryDirectories": [ "$(SolutionDir)..\\lib\\SFML\\lib" ],
+                "preprocessorDefinitions": []
+            },
+          "dependencies": [ "05E20F1E-5327-4303-6DF4-324137EB096B" ],
+            "dependents": [],
+            "name": "Jeu-6",
+            "property-lib": false,
+            "property-pch": false,
+            "property-vcpkg": false,
+            "property-window": false
+        }
+    },
+    "projects_name_to_guid": {
+        "Engine": "05E20F1E-5327-4303-6DF4-324137EB096B",
+        "Jeu-6": "318875B8-4C3F-5451-7A57-6A0160812C74"
+    },
+    "solution_guid": "04B92265-04FF-5942-1B72-3E6D658A19F9",
+    "solution_name": "Jeu-6",
+    "startup_project": "",
+    "version": "2.0"
+}
