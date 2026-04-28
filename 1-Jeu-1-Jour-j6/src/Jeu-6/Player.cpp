@@ -18,10 +18,22 @@ Player::Player()
     m_moveUpKey = sf::Keyboard::Key::Z;
     m_moveDownKey = sf::Keyboard::Key::S;
 
+    m_ShootUpKey = sf::Keyboard::Key::Up;
+    m_ShootDownKey = sf::Keyboard::Key::Down;
+    m_ShootLeftKey = sf::Keyboard::Key::Left;
+    m_ShootRightKey = sf::Keyboard::Key::Right;
+    m_ReloadKey = sf::Keyboard::Key::R;
+
     mMovingLeft = false;
     mMovingRight = false;
     mMovingUp = false;
     mMovingDown = false;
+
+    mShootingUp = false;
+    mShootingDown = false;
+    mShootingLeft = false;
+    mShootingRight = false;
+    mReloading = false;
 }
 
 Vector2f Player::GetMoveDirection() const

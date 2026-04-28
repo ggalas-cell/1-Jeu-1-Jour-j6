@@ -16,10 +16,22 @@ class Player : public Component, public Updatable, public FixedUpdatable, public
     bool mMovingUp;
     bool mMovingDown;
 
+    bool mShootingUp;
+    bool mShootingDown;
+    bool mShootingLeft;
+    bool mShootingRight;
+    bool mReloading;
+
     sf::Keyboard::Key m_moveLeftKey;
     sf::Keyboard::Key m_moveRightKey;
     sf::Keyboard::Key m_moveUpKey;
     sf::Keyboard::Key m_moveDownKey;
+
+    sf::Keyboard::Key m_ShootUpKey;
+    sf::Keyboard::Key m_ShootDownKey;
+    sf::Keyboard::Key m_ShootLeftKey;
+    sf::Keyboard::Key m_ShootRightKey;
+    sf::Keyboard::Key m_ReloadKey;
 
 
     std::function<void()> m_onExitReached;

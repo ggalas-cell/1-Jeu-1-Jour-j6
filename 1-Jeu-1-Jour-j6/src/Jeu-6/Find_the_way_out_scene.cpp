@@ -218,7 +218,7 @@ void Find_the_way_out_scene::OnEnter()
             if (m_maze.GetCell(row, col) == 'S')
                 m_maze.GetWorldPos(row, col, spawnX, spawnY);
     
-    m_ResetKey = sf::Keyboard::Key::R;
+    m_ResetKey = sf::Keyboard::Key::E;
     mResetPressed = false;
 
     Create("Player", spawnX, spawnY, 0, 0, 0);
