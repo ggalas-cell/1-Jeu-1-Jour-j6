@@ -6,12 +6,13 @@
 #include "TagComponent.h"
 #include "Collider.h"
 #include "PushBlock.h"
+#include "GameData.h"
 #include <iostream>
 #include <functional>
 
 Player::Player()
 {
-    m_sqeed = 1.f;
+    m_sqeed =GameData::Get()->PlayerSpeed;
 
     m_moveLeftKey = sf::Keyboard::Key::Q;
     m_moveRightKey = sf::Keyboard::Key::D;
