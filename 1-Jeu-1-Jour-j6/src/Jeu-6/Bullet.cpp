@@ -5,35 +5,37 @@
 #include "Health.h"
 #include "Entity.h"
 #include "Collider.h"
+#include "GameData.h"
 
-void Bullet::Shoot()
+void Bullet::FixedUpdate()
 {
-	float deltatime = GameManager::Get()->GetDeltaTime();
+	m_lifetime = GameData::Get()->BulletLifetime;
+	float deltatime = GameManager::Get()->GetFixedDT();
 	m_lifetimeTimer += deltatime;
 
-	TransformComponent* transform = mOwner->AddComponent<TransformComponent>();
+	if (m_lifetimeTimer >= m_lifetime)
+	{
+		mOwner->Destroy();
+		return;
+	}
+	TransformComponent* transform = mOwner->GetComponent<TransformComponent>();
 
 	if (transform)
 	{
 		Vector2f pos = transform->GetPos();
 
-		pos.x = m_direction.x * m_speed * deltatime;
-		pos.y = m_direction.y * m_speed * deltatime;
+		pos.x += m_direction.x * m_speed * deltatime;
+		pos.y += m_direction.y * m_speed * deltatime;
 		transform->SetPos(pos);
 	}
 
 }
 
-void Bullet::FixedUpdate()
-{
-	Shoot();
-}
-
 void Bullet::OnCollisionEnter(Collider* _self, Collider* _other)
 {
 	TagComponent* tag = _other->GetOwner()->GetComponent<TagComponent>();
-
-	if (tag->Is("Enemy")) return;
+	if (!tag) return;
+	if (tag->Is("Player")) return;
 
 	Health* hp = _other->GetOwner()->GetComponent<Health>();
 	hp->TakeDamage(m_damage);

@@ -10,6 +10,9 @@
 #include <iostream>
 #include <InputManager.h>
 #include "GameManager.h"
+#include <GameData.h>
+#include <Bullet.h>
+#include <ShootingComponent.h>
 
 
 void Find_the_way_out_scene::DrawMaze(sf::RenderWindow* _window)
@@ -198,6 +201,24 @@ void Find_the_way_out_scene::GoToNextLevel()
 
 }
 
+void Find_the_way_out_scene::SpawnBullet(Vector2f pos, Vector2f direction)
+{
+    GameData* data = GameData::Get();
+
+    Entity* bulletEntity = CreateEntity();
+    bulletEntity->AddComponent<TagComponent>("Bullet");
+    bulletEntity->GetComponent<TransformComponent>()->SetPos(pos);
+
+    BoxCollider* collider = bulletEntity->AddComponent<BoxCollider>(8.f, 8.f, BULLET_LAYER, ENEMY_LAYER);
+    collider->SetTrigger(true);
+    collider->SetVisible(true);
+
+    Bullet* bullet = bulletEntity->AddComponent<Bullet>();
+    bullet->SetDirection(direction);
+    bullet->SetDamage(data->BulletDamage);
+    bullet->SetLifetime(data->BulletLifetime);
+}
+
 
 
 
@@ -309,5 +330,9 @@ void Find_the_way_out_scene::Create(const std::string& entity, float _posX, floa
         player->SetOnExitCallback([this]() {
             GoToNextLevel();
             });
+
+        ShootingComponent* shoot = m_player->AddComponent<ShootingComponent>();
+
+        shoot->SetSpawnCallback([this](Vector2f pos, Vector2f dir) {SpawnBullet(pos, dir); });
     }
 }

@@ -36,6 +36,7 @@ class Find_the_way_out_scene : public Scene, public IBlockCallback
     void SpawnWalls();
     void SetFog();
     void GoToNextLevel();
+    void SpawnBullet(Vector2f pos, Vector2f direction);
 
 public:
     Find_the_way_out_scene(int level = 1) : m_currentLevel(level) {}

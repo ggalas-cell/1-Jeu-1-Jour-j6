@@ -11,7 +11,7 @@ class Bullet : public Component ,public FixedUpdatable,public Collidable
     float    m_speed = 300.f;
     float    m_fequency = 0.8f;
     int      m_damage = 1;
-    float    m_lifetime = 3.f;
+    float    m_lifetime = 0.f;
     float    m_lifetimeTimer = 0.f;
 
 
@@ -22,7 +22,6 @@ public:
     void SetDamage(int damage) { m_damage = damage; }
     void SetLifetime(float t) { m_lifetime = t; }
 
-    void Shoot();
     void FixedUpdate() override;
     void OnCollisionEnter(Collider* _self, Collider* _other) override;
 };

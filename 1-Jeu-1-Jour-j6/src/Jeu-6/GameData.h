@@ -10,10 +10,13 @@ public:
     int currencyPerKill = 1;
     int BulletDamage = 1;
     float BulletSpeed = 300.f;
+    float FireFrequency = 0.5f;
+    float BulletLifetime = 3.f;
 
     //---- Player ----//
     float PlayerSpeed = 1.f;
     float PlayerHp = 5;
+
 
     //---- Enemy ----//
 
